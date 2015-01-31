@@ -20,13 +20,9 @@ module.exports = yeoman.generators.Base.extend({
   writing: {
     app: function () {
       this.fs.copy(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json')
-      );
-      this.fs.copy(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
-      );
+          this.sourceRoot(),
+          this.destinationRoot()
+      )
     },
 
     projectfiles: function () {
@@ -42,8 +38,8 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function () {
-    this.installDependencies({
-      skipInstall: this.options['skip-install']
-    });
+    // this.installDependencies({
+    //   skipInstall: this.options['skip-install']
+    // });
   }
 });

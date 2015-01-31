@@ -1,4 +1,4 @@
 {
-    "sourceFile": "./<%=project_name=>/src/main.js",
-    "destinationDirectory": "./<%=project_name=>/dist"
+    "sourceFile": "./src/main.js",
+    "destinationDirectory": "./dist"
 }
