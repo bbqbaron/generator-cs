@@ -1,3 +1,3 @@
 require! 'backbone.marionette':Marionette
 
-module.exports = new Marionette.Application.extend!
+module.exports = new Marionette.Application!

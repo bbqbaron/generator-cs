@@ -12,6 +12,6 @@ require 'rivets-backbone-adapter'
 configureRivets!
 createCustomerRivetsFormatters!
 
-require! './App'
+require! './app'
 
-$ MainApp.start
+$ app~start
