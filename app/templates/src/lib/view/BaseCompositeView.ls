@@ -1,6 +1,6 @@
 require! {'lodash':_, 'backbone':Backbone, 'backbone.marionette':Marionette, 'rivets':Rivets}
 
-module.exports = Backbone.Marionette.CompositeView.extend {
+class BaseCompositeView extends Marionette.CompositeView
     # override to call Rivet bindings before rendering children, to keep your grubby hands off their bindings
     render: ~>
         @_ensureViewIsIntact!
@@ -26,4 +26,5 @@ module.exports = Backbone.Marionette.CompositeView.extend {
         model: @model
         view: @
         viewModel: @viewModel
-}
+
+module.exports = BaseCompositeView

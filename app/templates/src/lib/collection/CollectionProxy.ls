@@ -1,7 +1,7 @@
 require! { 'lodash':_, 'backbone':Backbone }
 
 # I wish I had lua metatables for this
-CollectionProxy = Backbone.Collection.extend {
+class CollectionProxy extends Backbone.Collection
     initialize: (options) !~>
         @_master = options.collection
         delete options.collection
@@ -50,6 +50,5 @@ CollectionProxy = Backbone.Collection.extend {
         Backbone.Collection.prototype.set.call @, models, options
 
         @_masterAddMergeOnly models, options
-}
 
 module.exports = CollectionProxy
