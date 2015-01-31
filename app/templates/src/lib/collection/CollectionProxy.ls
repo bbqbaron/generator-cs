@@ -4,10 +4,10 @@ require! { 'lodash':_, 'backbone':Backbone }
 CollectionProxy = Backbone.Collection.extend {
     initialize: (options) !~>
         @_master = options.collection
-        delete options.collection
+        delete! options.collection
 
         @_filter = options.filter
-        delete options.filter
+        delete! options.filter
 
         Backbone.Collection.prototype.initialize.call @, options
 

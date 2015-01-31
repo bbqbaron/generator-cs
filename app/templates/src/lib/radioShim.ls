@@ -1,4 +1,5 @@
-require! {'lodash':_, 'backbone':Backbone, 'backbone.marionette':Marionette}
+require! {'lodash':_, 'backbone':Backbone, 'backbone.marionette':Marionette,
+    'backbone.radio': Radio}
 
 module.exports = !->
     Marionette.Application.prototype._initChannel = !->
