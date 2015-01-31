@@ -4,10 +4,10 @@ require! { 'lodash':_, 'backbone':Backbone }
 CollectionProxy = Backbone.Collection.extend {
     initialize: (options) !~>
         @_master = options.collection
-        delete! options.collection
+        delete options.collection
 
         @_filter = options.filter
-        delete! options.filter
+        delete options.filter
 
         Backbone.Collection.prototype.initialize.call @, options
 
@@ -30,7 +30,6 @@ CollectionProxy = Backbone.Collection.extend {
     push: !-> throw "read-only"
     pop: !-> throw "read-only"
     remove: !-> throw "read-only"
-    reset: !-> throw "read-only"
     shift: !-> throw "read-only"
     sort: !-> throw "read-only"
     unshift: !-> throw "read-only"

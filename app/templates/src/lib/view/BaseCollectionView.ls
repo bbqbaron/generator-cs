@@ -7,3 +7,4 @@ module.exports = Marionette.CollectionView.extend {
     onClose: !~> @binding?.unbind!
 
     bindingContext: ~> {view: @, viewModel: @viewModel}
+}

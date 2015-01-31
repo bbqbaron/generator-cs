@@ -22,8 +22,8 @@ module.exports = Backbone.Marionette.CompositeView.extend {
     onClose: !~> @binding?.unbind!
 
     bindingContext: ~>
-        { collection: @collection,
-            model: @model,
-            view: this,
-            viewModel: @viewModel }
+        collection: @collection
+        model: @model
+        view: @
+        viewModel: @viewModel
 }

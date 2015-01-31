@@ -1,16 +1,12 @@
 var gulp = require('gulp'),
     livescript = require('gulp-livescript'),
-    config = require('./config/jsSettings.json')
     uglify = require('gulp-uglify'),
     browserify = require('gulp-browserify');
 
-var config = { "sourceFile": "./src/main.js",
-    "destinationDirectory": "./dist" };
-
 gulp.task('ls', function() {
-    return gulp.src('src/**/*.ls')
+    gulp.src('src/**/*.ls')
         .pipe(livescript())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('src'));
 });
 
 gulp.task('html', function() {
@@ -19,14 +15,16 @@ gulp.task('html', function() {
 });
 
 gulp.task('build-dev', ['ls', 'html'], function() {
-    return gulp.src(config.sourceFile)
+    return gulp.src('src/app/main.js')
         .pipe(browserify())
-        .pipe(gulp.dest(config.destinationDirectory));
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build', ['ls', 'html'], function() {
-    return gulp.src(config.sourceFile)
+    return gulp.src('src/app/main.js')
         .pipe(browserify())
         .pipe(uglify())
-        .pipe(gulp.dest(config.destinationDirectory));
+        .pipe(gulp.dest('dist'));
 });
+
+// TODO ls compilation output cleanup
