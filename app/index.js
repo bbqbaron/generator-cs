@@ -3,10 +3,11 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 
-// TODO do you want to use LiveScript?
+// TODO do you want to use LiveScript? Typescript?
 // TODO do you want a dev server?
 // TODO do you want to use Exoskeleton, if we can get it to work with Marionette?
 // TODO do you need to fix CSRF for Django?
+// TODO do you want bootstrap styling?
 
 module.exports = yeoman.generators.Base.extend({
   initializing: function () {
