@@ -6,6 +6,7 @@ var yosay = require('yosay');
 // TODO do you want to use LiveScript?
 // TODO do you want a dev server?
 // TODO do you want to use Exoskeleton, if we can get it to work with Marionette?
+// TODO do you need to fix CSRF for Django?
 
 module.exports = yeoman.generators.Base.extend({
   initializing: function () {
@@ -42,8 +43,8 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function () {
-    // this.installDependencies({
-    //   skipInstall: this.options['skip-install']
-    // });
+    this.installDependencies({
+      skipInstall: this.options['skip-install']
+    });
   }
 });

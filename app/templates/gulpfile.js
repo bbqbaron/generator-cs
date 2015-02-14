@@ -1,13 +1,6 @@
 var gulp = require('gulp'),
-    livescript = require('gulp-livescript'),
     uglify = require('gulp-uglify'),
     browserify = require('gulp-browserify');
-
-gulp.task('ls', function() {
-    gulp.src('src/**/*.ls')
-        .pipe(livescript())
-        .pipe(gulp.dest('src'));
-});
 
 gulp.task('html', function() {
     return gulp.src('src/**/*.html')
@@ -26,6 +19,3 @@ gulp.task('build', ['ls', 'html'], function() {
         .pipe(uglify())
         .pipe(gulp.dest('dist'));
 });
-
-// TODO ls compilation output cleanup
-// TODO watcher(s)

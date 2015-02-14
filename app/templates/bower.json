@@ -12,12 +12,12 @@
     "tests"
   ],
   "dependencies": {
-    "backbone": "^1.1.2",
-    "backbone-relational": "^0.9.0",
-    "backbone.marionette": "^2.3.0",
-    "backbone.radio": "^0.8.4",
-    "lodash": "^2.4.1",
-    "rivets": "^0.7.2",
-    "rivets-backbone-adapter": "^2.1.2"
+    "backbone": "1.1.2",
+    "backbone-relational": "0.9.0",
+    "backbone.marionette": "2.3.0",
+    "backbone.radio": "0.8.4",
+    "lodash": "2.4.1",
+    "rivets": "0.7.2",
+    "rivets-backbone-adapter": "2.1.2"
   }
 }
