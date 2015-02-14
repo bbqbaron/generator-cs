@@ -1,7 +1,6 @@
 var $ = require('jquery'),
     Backbone = require('Backbone'),
     Rivets = require('rivets'),
-    createCustomerRivetsFormatters = require('../lib/createCustomRivetsFormatters'),
     configureRivets = require('../lib/configureRivets');
 
 Backbone.$ = $;
@@ -9,7 +8,6 @@ Backbone.$ = $;
 require('rivets-backbone-adapter');
 // execute more Rivets changes
 configureRivets();
-createCustomerRivetsFormatters();
 
 var app = require('./app');
 
