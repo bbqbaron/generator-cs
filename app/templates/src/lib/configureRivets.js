@@ -54,7 +54,7 @@ module.exports = function() {
                         });
                     }
                     this.observeMutations(newValue, obj[this.id], keypath);
-                }, this);
+                }, this)
             }
             value.set = setter.set;
             value.get = setter.get;
@@ -87,12 +87,13 @@ module.exports = function() {
         unbind: function(el) {
             el.removeEventListener('keydown', onEnter(this));
         }
+    };
 
-    Rivets.binders.'region' = {
+    Rivets.binders['region'] = {
         bind: function(el) {
             var v = this.view.models.view;
             v.updateRegion(el, this.keypath);
             v.regionListen(el, this.keypath);
         }
-    }
+    };
 };
