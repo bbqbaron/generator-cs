@@ -14,60 +14,7 @@ module.exports = function() {
         unobserve: function () { }
     }
 
-    // http://softgpl.com/libs/js/rivets.ie7.js
-    /* IE7 does not support Object.defineProperty...  So we just add
-    * properties directly to the object, and add getter and setters
-    * as just functions
-    */
-    // TODO i think this means that raw updates to properties won't trigger the crappy IE8 observer
-    // probably wise to just set these to read-only one-time gets with no subscribe functionality,
-    // since we should be putting dependency logic in templates.
-    // this is only here to support binding context access, and you should _never_ change base binding context
-
-    // TODO alternately, we could just require all bindings to start with an explicit :,
-    // and make all binding contexts backbone models : ).
-    // and then disable the . adapter
-
-    Rivets.adapters['.'].weakReference = function(obj) {
-        if (obj[this.id] == null) {
-            id = this.counter++;
-        }
-        this.weakmap[id] = {
-            callbacks: {}
-        };
-        obj[this.id] = id;
-        return this.weakmap[obj[this.id]];
-    }
-
-    Rivets.adapters['.'].subscribe = function(obj, keypath, callback) {
-        callbacks = this.weakReference(obj).callbacks;
-        if (callbacks[keypath] == null) {
-            callbacks[keypath] = [];
-            value = obj[keypath];
-            setter = {
-                get: function() { return value },
-                set: _.bind(function (newValue) {
-                    if (newValue !== value) {
-                        value = newValue;
-                        _.each(callbacks[keypath], function(callback) {
-                            callback();
-                        });
-                    }
-                    this.observeMutations(newValue, obj[this.id], keypath);
-                }, this)
-            }
-            value.set = setter.set;
-            value.get = setter.get;
-        }
-    };
-
-    Rivets.formatters['!'] = function(x) { return !x; };
-
-    // TODO this binder requires explicit view support and is not very useable
-    // better to have an rv-on-show, and fire that event to Rivets
-    Rivets.binders.focus = function (el, value) {
-        el.focus();
-    };
+    delete Rivets.adapters['.'];
 
     onEnter = function(t) {
         return function(e) {
