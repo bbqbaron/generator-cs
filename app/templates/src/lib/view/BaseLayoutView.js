@@ -40,6 +40,7 @@ BaseLayoutView = Marionette.LayoutView.extend({
 
     updateRegion: function(el, regionName){
         var requiredView, region;
+        // TODO clear the region if no requiredView
         requiredView = this.getViewForRegion(regionName);
         if (requiredView) {
             region = this.getRegion(regionName);
